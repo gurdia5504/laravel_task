@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use Spatie\Permission\PermissionServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -11,7 +11,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Manually register service providers here if needed
+        $this->app->register(PermissionServiceProvider::class);
     }
 
     /**
